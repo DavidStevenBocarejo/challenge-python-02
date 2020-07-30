@@ -1,11 +1,43 @@
 # Resolve the problem!!
 import string
-
+import random
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
 
 
 def generate_password():
-    # Start coding here
+    len_password= random.randrange(8,16)
+    password_generated = []
+    i=0
+    while i < len_password:
+        lower_letter = chr(random.randrange(97,122))
+        upper_letter = chr(random.randrange(65,90))
+        number_str = str(random.randrange(0,9))
+        lent_symbol = len(SYMBOLS)
+        random_simbol = random.randrange(0,lent_symbol)
+        slect_symbol = SYMBOLS[random_simbol]
+        if i == 0:
+            password_generated.append(lower_letter)
+            password_generated.append(upper_letter)
+            password_generated.append(number_str)
+            password_generated.append(slect_symbol)
+            i +=4
+        else:
+            x = random.randrange(1,4)
+            if x == 1:
+                password_generated.append(lower_letter)
+                i +=1
+            elif x == 2:
+                password_generated.append(upper_letter)
+                i +=1
+            elif x == 3:
+                password_generated.append(number_str)
+                i +=1
+            elif x == 4:
+                password_generated.append(slect_symbol)
+                i +=1
+    Str_passwaord =''.join(password_generated)
+    print(f'Password generado = {Str_passwaord}')
+    return Str_passwaord
 
 
 def validate(password):
