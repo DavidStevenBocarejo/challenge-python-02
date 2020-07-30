@@ -1,4 +1,4 @@
-# Resolve the problem!!
+# Resolve by David Bocarejo [c4]
 import string
 import random
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
